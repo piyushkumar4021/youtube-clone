@@ -1,5 +1,7 @@
+import Navbar from './Components/Navbar';
+
 function App() {
-  return <h1>Youtube Clone</h1>;
+  return <Navbar />;
 }
 
 export default App;
