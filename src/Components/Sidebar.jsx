@@ -1,6 +1,6 @@
 import categories from '../data/categories';
 
-const Sidebar = () => {
+const Sidebar = ({ sideLabels }) => {
   const iconProps = {
     size: 24,
     color: '#52525b',
@@ -14,7 +14,7 @@ const Sidebar = () => {
             key={c.value}
             className='mb-4 text-lg cursor-pointer select-none flex gap-x-3 items-center'
           >
-            {<c.icon {...iconProps} />} {c.name}
+            {<c.icon {...iconProps} />} {sideLabels && c.name}
           </li>
         ))}
       </ul>

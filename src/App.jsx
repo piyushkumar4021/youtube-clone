@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
 
 function App() {
+  const [sideLabels, setSideLabels] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <Sidebar />
+      <Navbar setSideLabels={setSideLabels} />
+      <Sidebar sideLabels={sideLabels} />
     </>
   );
 }
