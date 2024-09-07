@@ -2,7 +2,7 @@ import categories from '../data/categories';
 
 const Sidebar = ({ sideLabels }) => {
   const iconProps = {
-    size: 24,
+    size: 20,
     color: '#737373',
   };
 
