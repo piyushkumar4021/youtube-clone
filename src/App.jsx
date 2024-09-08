@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
+import Feed from './Components/Feed';
 
 function App() {
   const [sideLabels, setSideLabels] = useState(true);
@@ -9,10 +10,9 @@ function App() {
     <>
       <Navbar setSideLabels={setSideLabels} />
       <Sidebar sideLabels={sideLabels} />
+      <Feed sideLabels={sideLabels} />
     </>
   );
 }
 
 export default App;
-
-// https://jsonplaceholder.typicode.com/photos
