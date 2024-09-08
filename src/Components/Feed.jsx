@@ -1,21 +1,26 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Card from './Card';
+import apiClient from '../Services/api-client';
 
-const Feed = ({ sideLabels }) => {
+const Feed = ({ sideLabels, category }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/photos')
-      .then((res) => res.json())
-      .then((data) => setVideos(data.slice(1, 29)));
-  }, []);
+    apiClient
+      .get(
+        `/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=30&videoCategoryId=${category}`
+      )
+      .then(({ data }) => setVideos(data.items));
+  }, [category]);
+
+  console.log(videos);
 
   return (
     <div
       className={`${
         sideLabels ? 'pl-56' : 'pl-24'
-      }  pt-24 pb-8 pr-4 flex flex-wrap gap-6 justify-center`}
+      }  pt-24 pb-8 pr-4 flex flex-wrap gap-x-3 gap-y-6 justify-center`}
     >
       {videos.map((v) => (
         <Card key={v.id} item={v} />

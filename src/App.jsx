@@ -5,12 +5,17 @@ import Feed from './Components/Feed';
 
 function App() {
   const [sideLabels, setSideLabels] = useState(true);
+  const [category, setCategory] = useState(0);
 
   return (
     <>
       <Navbar setSideLabels={setSideLabels} />
-      <Sidebar sideLabels={sideLabels} />
-      <Feed sideLabels={sideLabels} />
+      <Sidebar
+        sideLabels={sideLabels}
+        category={category}
+        setCategory={setCategory}
+      />
+      <Feed sideLabels={sideLabels} category={category} />
     </>
   );
 }

@@ -1,6 +1,6 @@
 import categories from '../data/categories';
 
-const Sidebar = ({ sideLabels }) => {
+const Sidebar = ({ sideLabels, category, setCategory }) => {
   const iconProps = {
     size: 20,
     color: '#737373',
@@ -12,7 +12,8 @@ const Sidebar = ({ sideLabels }) => {
         {categories.map((c) => (
           <li
             key={c.value}
-            className='mb-4 text-lg cursor-pointer select-none flex gap-x-3 items-center'
+            onClick={() => setCategory(c.id)}
+            className={`mb-4 text-lg cursor-pointer select-none flex gap-x-3 items-center`}
           >
             {<c.icon {...iconProps} />} {sideLabels && c.name}
           </li>
