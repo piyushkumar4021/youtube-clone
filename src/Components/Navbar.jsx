@@ -7,6 +7,7 @@ import {
 } from 'react-icons/io';
 import logo from '../assets/logo.png';
 import person from '../assets/person.png';
+import Icon from './Icon';
 
 const Navbar = ({ setSideLabels }) => {
   const iconProps = {
@@ -15,11 +16,12 @@ const Navbar = ({ setSideLabels }) => {
   };
 
   return (
-    <div className='flex justify-between items-center px-4 py-2 shadow bg-white fixed w-screen z-10'>
+    <div className='flex justify-between items-center px-4 py-3 pr-8 shadow bg-white fixed w-screen z-10'>
       <div className='flex items-center gap-x-4'>
-        <IoMdMenu
+        <Icon
           className='cursor-pointer'
           {...iconProps}
+          icon={IoMdMenu}
           onClick={() => setSideLabels((prev) => !prev)}
         />
         <img
@@ -35,13 +37,17 @@ const Navbar = ({ setSideLabels }) => {
           placeholder='Search'
           className='outline-none w-full'
         />
-        <IoMdSearch className='cursor-pointer' {...iconProps} />
+        <Icon className='cursor-pointer' icon={IoMdSearch} {...iconProps} />
       </div>
 
       <div className='flex items-center gap-x-3'>
-        <IoMdNotifications className='cursor-pointer' {...iconProps} />
-        <IoMdAdd className='cursor-pointer' {...iconProps} />
-        <IoMdSettings className='cursor-pointer' {...iconProps} />
+        <Icon
+          className='cursor-pointer'
+          icon={IoMdNotifications}
+          {...iconProps}
+        />
+        <Icon className='cursor-pointer' icon={IoMdAdd} {...iconProps} />
+        <Icon className='cursor-pointer' icon={IoMdSettings} {...iconProps} />
         <img
           className='h-10 rounded-full cursor-pointer'
           src={person}

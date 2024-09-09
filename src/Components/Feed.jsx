@@ -14,13 +14,11 @@ const Feed = ({ sideLabels, category }) => {
       .then(({ data }) => setVideos(data.items));
   }, [category]);
 
-  console.log(videos);
-
   return (
     <div
       className={`${
         sideLabels ? 'pl-56' : 'pl-24'
-      }  pt-24 pb-8 pr-4 flex flex-wrap gap-x-3 gap-y-6 justify-center`}
+      }  pt-24 pb-8 pr-4 flex flex-wrap gap-x-3 gap-y-6 justify-center bg-neutral-100`}
     >
       {videos.map((v) => (
         <Card key={v.id} item={v} />
