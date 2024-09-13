@@ -1,5 +1,5 @@
 import moment from 'moment';
-import viewsConverter from '../Services/views-converter';
+import converter from '../Services/converter';
 
 const Card = ({ item: { snippet, statistics } }) => {
   return (
@@ -12,7 +12,7 @@ const Card = ({ item: { snippet, statistics } }) => {
       <h3 className='text-lg font-semibold leading-tight'>{snippet.title}</h3>
       <p className='text-neutral-600 font-medium'>{snippet.channelTitle}</p>
       <span className='flex items-center gap-x-1'>
-        {viewsConverter(statistics.viewCount)}
+        {converter(statistics.viewCount)} Views
         {statistics.viewCount && (
           <span className='w-1 h-1 rounded-full bg-neutral-600 inline-block'></span>
         )}
