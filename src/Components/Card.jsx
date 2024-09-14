@@ -7,8 +7,8 @@ const Card = ({ item: { snippet, statistics } }) => {
       <img
         className='h-44 w-full overflow-hidden object-cover rounded-xl mb-2'
         src={snippet.thumbnails.high.url}
-        alt=''
       />
+
       <h3 className='text-lg font-semibold leading-tight'>{snippet.title}</h3>
       <p className='text-neutral-600 font-medium'>{snippet.channelTitle}</p>
       <span className='flex items-center gap-x-1'>
