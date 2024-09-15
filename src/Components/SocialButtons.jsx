@@ -32,7 +32,10 @@ const SocialButtons = ({ data }) => {
   return (
     <>
       {socials.map((s) => (
-        <Button className='flex gap-x-2 items-center bg-neutral-200 hover:bg-neutral-300 transition-colors rounded-3xl px-4 py-2'>
+        <Button
+          className='flex gap-x-2 items-center bg-neutral-200 hover:bg-neutral-300 transition-colors rounded-3xl px-4 py-2'
+          key={s.name}
+        >
           <Icon icon={s.icon} size={18} /> {s.name}
         </Button>
       ))}

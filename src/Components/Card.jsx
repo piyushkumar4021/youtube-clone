@@ -1,15 +1,20 @@
 import moment from 'moment';
 import converter from '../Services/converter';
+import { Link } from 'react-router-dom';
 
-const Card = ({ item: { snippet, statistics } }) => {
+const Card = ({ item }) => {
+  const { snippet, statistics, id } = item;
+
   return (
     <div className='w-80'>
-      <img
-        className='h-44 w-full overflow-hidden object-cover rounded-xl mb-2'
-        src={snippet.thumbnails.high.url}
-      />
+      <Link to={`/video?v=${id}`}>
+        <img
+          className='h-44 w-full overflow-hidden object-cover rounded-xl mb-2'
+          src={snippet.thumbnails.high.url}
+        />
+        <h3 className='text-lg font-semibold leading-tight'>{snippet.title}</h3>
+      </Link>
 
-      <h3 className='text-lg font-semibold leading-tight'>{snippet.title}</h3>
       <p className='text-neutral-600 font-medium'>{snippet.channelTitle}</p>
       <span className='flex items-center gap-x-1'>
         {converter(statistics.viewCount)} Views
