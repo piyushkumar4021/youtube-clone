@@ -16,13 +16,13 @@ const Card = ({ item }) => {
       </Link>
 
       <p className='text-neutral-600 font-medium'>{snippet.channelTitle}</p>
-      <span className='flex items-center gap-x-1'>
+      <div className='flex items-center gap-x-1'>
         {converter(statistics.viewCount)} Views
         {statistics.viewCount && (
           <span className='w-1 h-1 rounded-full bg-neutral-600 inline-block'></span>
         )}
         {moment(snippet.publishedAt).fromNow()}
-      </span>
+      </div>
     </div>
   );
 };

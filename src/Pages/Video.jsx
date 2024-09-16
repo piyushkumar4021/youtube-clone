@@ -6,10 +6,7 @@ import VideoDetails from './../Components/VideoDetails';
 const Video = () => {
   const [searchParams] = useSearchParams();
   const vId = searchParams.get('v');
-  const { data } = useVideo(vId);
-
-  // Temporary
-  const cnts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const data = useVideo(vId);
 
   return (
     <div className='pt-24 pb-8 px-24 mx-auto flex gap-x-6'>
@@ -26,7 +23,7 @@ const Video = () => {
         <VideoDetails data={data} />
       </div>
 
-      <SideVideos cnts={cnts} />
+      <SideVideos categoryId={data?.snippet?.categoryId} />
     </div>
   );
 };
