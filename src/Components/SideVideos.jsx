@@ -4,11 +4,13 @@ import converter from './../Services/converter';
 import moment from 'moment';
 
 const SideVideos = ({ categoryId }) => {
-  const { data } = useVideos(categoryId);
+  const {
+    data: { items },
+  } = useVideos(categoryId);
 
   return (
     <div className='flex flex-col gap-y-3'>
-      {data.map(({ snippet, statistics, id }) => (
+      {items?.map(({ snippet, statistics, id }) => (
         <Link key={id} to={`/video?v=${id}`}>
           <div className='flex gap-x-2'>
             <img

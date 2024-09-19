@@ -1,8 +1,6 @@
 import useData from './useData';
 
-const useVideo = (vId) => {
-  const { data } = useData(`/videos?part=snippet%2Cstatistics&id=${vId}`);
-  return data?.items?.at(0);
-};
+const useVideo = (vId) =>
+  useData(`/videos?part=snippet%2Cstatistics&id=${vId}`);
 
 export default useVideo;

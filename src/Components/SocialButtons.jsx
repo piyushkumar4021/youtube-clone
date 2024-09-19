@@ -8,11 +8,11 @@ import Icon from './../Components/Icon';
 import converter from '../Services/converter';
 import Button from './Button';
 
-const SocialButtons = ({ data }) => {
+const SocialButtons = ({ item }) => {
   const socials = [
     {
       icon: BsHandThumbsUp,
-      name: `${converter(data?.statistics?.likeCount)} Likes`,
+      name: converter(item?.statistics?.likeCount),
     },
     {
       icon: BsShare,
