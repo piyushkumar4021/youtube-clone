@@ -9,6 +9,7 @@ import logo from '../assets/logo.png';
 import person from '../assets/person.png';
 import Icon from './Icon';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ setSideLabels }) => {
   const iconProps = {
@@ -26,9 +27,9 @@ const Navbar = ({ setSideLabels }) => {
             onClick={() => setSideLabels((prev) => !prev)}
           />
         </Button>
-        <Button>
+        <Link to='/'>
           <img className='h-6' src={logo} alt='Youtube Clone Logo' />
-        </Button>
+        </Link>
       </div>
 
       <div className='max-w-lg w-full flex items-center border border-neutral-500 rounded-full overflow-hidden px-3 py-1'>

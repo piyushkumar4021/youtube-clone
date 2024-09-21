@@ -1,31 +1,22 @@
 import { useState } from 'react';
-import Navbar from './Components/Navbar';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Video from './Pages/Video';
+import Layout from './Components/Layout';
 
 function App() {
   const [sideLabels, setSideLabels] = useState(true);
-  const [category, setCategory] = useState(0);
-
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-        <Home
-          sideLabels={sideLabels}
-          category={category}
-          setCategory={setCategory}
-        />
-      ),
-    },
-    { path: '/video', element: <Video /> },
-  ]);
 
   return (
     <>
-      <Navbar setSideLabels={setSideLabels} />
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout setSideLabels={setSideLabels} />}>
+            <Route path='/' element={<Home sideLabels={sideLabels} />} />
+            <Route path='/video' element={<Video />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

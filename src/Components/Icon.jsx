@@ -1,5 +1,5 @@
-const Icon = ({ icon: Icon, ...props }) => {
-  return <Icon {...props} />;
+const Icon = ({ icon: IconComponent, ...props }) => {
+  return <IconComponent {...props} />;
 };
 
 export default Icon;
