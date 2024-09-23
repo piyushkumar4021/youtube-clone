@@ -10,7 +10,7 @@ const SideVideos = ({ categoryId }) => {
   return (
     <div className='flex flex-col gap-y-3'>
       {items?.map(({ snippet, statistics, id }) => (
-        <Link key={id} to={`/video?v=${id}`}>
+        <Link key={id} to={`/video/${id}`}>
           <SideCard snippet={snippet} statistics={statistics} />
         </Link>
       ))}

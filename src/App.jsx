@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route element={<Layout setSideLabels={setSideLabels} />}>
             <Route path='/' element={<Home sideLabels={sideLabels} />} />
-            <Route path='/video' element={<Video />} />
+            <Route path='/video/:vId' element={<Video />} />
           </Route>
         </Routes>
       </BrowserRouter>

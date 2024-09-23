@@ -7,7 +7,7 @@ const Card = ({ item }) => {
 
   return (
     <div className='w-80'>
-      <Link to={`/video?v=${id}`}>
+      <Link to={`/video/${id}`}>
         <img
           className='h-44 w-full overflow-hidden object-cover rounded-xl mb-2'
           src={snippet.thumbnails.high.url}

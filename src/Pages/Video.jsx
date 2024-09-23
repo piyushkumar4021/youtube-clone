@@ -1,12 +1,11 @@
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import useVideo from '../hooks/useVideo';
 import SideVideos from './../Components/SideVideos';
 import VideoDetails from './../Components/VideoDetails';
 import YoutubeVideo from './../Components/YoutubeVideo';
 
 const Video = () => {
-  const [searchParams] = useSearchParams();
-  const vId = searchParams.get('v');
+  const { vId } = useParams();
   const { data } = useVideo(vId);
   const item = data?.items?.at(0);
 

@@ -9,8 +9,6 @@ const Description = ({ item }) => {
   const { snippet, statistics } = item || {};
   const [isHidden, setIsHidden] = useState(true);
 
-  console.log(item);
-
   return (
     <div className='mt-6 bg-stone-100 rounded-xl p-4 relative'>
       <pre
