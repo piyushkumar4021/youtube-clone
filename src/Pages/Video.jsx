@@ -12,7 +12,7 @@ const Video = () => {
 
   return (
     <div className='pt-24 pb-8 px-24 mx-auto flex gap-x-6'>
-      <div className=''>
+      <div className='max-w-7xl'>
         <YoutubeVideo vId={vId} />
         <VideoDetails item={item} />
       </div>

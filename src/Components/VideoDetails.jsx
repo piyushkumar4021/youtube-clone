@@ -2,6 +2,7 @@ import SubscribeButton from './SubscribeButton';
 import SocialButtons from './SocialButtons';
 import useChannels from '../hooks/useChannels';
 import ChannelDetails from './ChannelDetails';
+import Description from './Description';
 
 const VideoDetails = ({ item }) => {
   const { data } = useChannels(item?.snippet?.channelId);
@@ -21,6 +22,8 @@ const VideoDetails = ({ item }) => {
           <SocialButtons likeCount={item?.statistics?.likeCount} />
         </div>
       </div>
+
+      <Description item={item} />
     </div>
   );
 };
