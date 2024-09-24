@@ -10,7 +10,7 @@ const Video = () => {
   const item = data?.items?.at(0);
 
   return (
-    <div className='pt-24 pb-8 px-24 mx-auto flex gap-x-6'>
+    <div className='pt-6 pb-8 px-24 mx-auto flex gap-x-6'>
       <div className='max-w-7xl'>
         <YoutubeVideo vId={vId} />
         <VideoDetails item={item} />

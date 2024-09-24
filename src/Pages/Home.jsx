@@ -2,17 +2,17 @@ import Sidebar from '../Components/Sidebar';
 import Feed from '../Components/Feed';
 import { useState } from 'react';
 
-const Home = ({ sideLabels }) => {
+const Home = ({ showSide }) => {
   const [category, setCategory] = useState(0);
 
   return (
     <>
       <Sidebar
-        sideLabels={sideLabels}
+        showSide={showSide}
         category={category}
         setCategory={setCategory}
       />
-      <Feed sideLabels={sideLabels} category={category} />
+      <Feed showSide={showSide} category={category} />
     </>
   );
 };

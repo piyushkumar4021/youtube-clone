@@ -10,22 +10,21 @@ import person from '../assets/person.png';
 import Icon from './Icon';
 import Button from './Button';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
-const Navbar = ({ setSideLabels }) => {
+const Navbar = ({ toggleSide }) => {
   const iconProps = {
     size: 28,
     color: '#52525b',
   };
 
+  console.log('Navbar');
+
   return (
-    <div className='flex justify-between items-center px-4 py-3 pr-8 shadow bg-white fixed w-screen z-10'>
+    <div className='flex justify-between items-center px-4 py-3 shadow bg-white sticky top-0 z-10'>
       <div className='flex items-center gap-x-4'>
-        <Button>
-          <Icon
-            {...iconProps}
-            icon={IoMdMenu}
-            onClick={() => setSideLabels((prev) => !prev)}
-          />
+        <Button onClick={toggleSide}>
+          <Icon {...iconProps} icon={IoMdMenu} />
         </Button>
         <Link to='/'>
           <img className='h-6' src={logo} alt='Youtube Clone Logo' />
@@ -61,4 +60,4 @@ const Navbar = ({ setSideLabels }) => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

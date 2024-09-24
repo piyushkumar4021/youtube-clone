@@ -3,8 +3,10 @@ import apiClient from '../Services/api-client';
 
 function useData(endpoint) {
   const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     const controller = new AbortController();
 
     const getData = async () => {
@@ -17,6 +19,8 @@ function useData(endpoint) {
       } catch (err) {
         if (err.name === 'CanceledError') return;
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -25,7 +29,7 @@ function useData(endpoint) {
     return () => controller.abort();
   }, [endpoint]);
 
-  return { data };
+  return { data, isLoading };
 }
 
 export default useData;

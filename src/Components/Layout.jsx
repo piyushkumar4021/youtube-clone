@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 
-const Layout = ({ setSideLabels }) => {
+const Layout = ({ toggleSide }) => {
   return (
     <>
-      <Navbar setSideLabels={setSideLabels} />
+      <Navbar toggleSide={toggleSide} />
       <Outlet />
     </>
   );

@@ -1,7 +1,7 @@
 import categories from '../data/categories';
 import Icon from './Icon';
 
-const Sidebar = ({ sideLabels, category, setCategory }) => {
+const Sidebar = ({ showSide, category, setCategory }) => {
   const getIconClass = (id) =>
     category === id ? 'box-content pb-1 border-b-2 border-red-500' : '';
 
@@ -11,7 +11,7 @@ const Sidebar = ({ sideLabels, category, setCategory }) => {
     }`;
 
   return (
-    <div className='px-8 py-4 inline-block shadow fixed bg-white pt-20 h-screen'>
+    <div className='px-8 py-5 shadow fixed bg-white h-screen'>
       <ul>
         {categories.map((c) => (
           <li
@@ -20,7 +20,7 @@ const Sidebar = ({ sideLabels, category, setCategory }) => {
             className={getCategoryClass(c.id)}
           >
             <Icon className={getIconClass(c.id)} icon={c.icon} />
-            {sideLabels && c.name}
+            {showSide && c.name}
           </li>
         ))}
       </ul>
