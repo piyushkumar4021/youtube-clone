@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.videos-grid {
+    --video-width: 320px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--video-width));
+}

@@ -11,7 +11,7 @@ const Sidebar = ({ showSide, category, setCategory }) => {
     }`;
 
   return (
-    <div className='px-8 py-5 shadow fixed bg-white h-screen'>
+    <div className='px-6 py-5 shadow bg-white '>
       <ul>
         {categories.map((c) => (
           <li

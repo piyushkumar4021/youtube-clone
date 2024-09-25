@@ -3,7 +3,6 @@ import {
   IoMdNotifications,
   IoMdAdd,
   IoMdSettings,
-  IoMdSearch,
 } from 'react-icons/io';
 import logo from '../assets/logo.png';
 import person from '../assets/person.png';
@@ -11,6 +10,7 @@ import Icon from './Icon';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import { memo } from 'react';
+import SearchInput from './SearchInput';
 
 const Navbar = ({ toggleSide }) => {
   const iconProps = {
@@ -18,10 +18,8 @@ const Navbar = ({ toggleSide }) => {
     color: '#52525b',
   };
 
-  console.log('Navbar');
-
   return (
-    <div className='flex justify-between items-center px-4 py-3 shadow bg-white sticky top-0 z-10'>
+    <div className='flex-grow-0 flex justify-between items-center px-4 py-3 shadow bg-white sticky top-0 z-10'>
       <div className='flex items-center gap-x-4'>
         <Button onClick={toggleSide}>
           <Icon {...iconProps} icon={IoMdMenu} />
@@ -31,16 +29,7 @@ const Navbar = ({ toggleSide }) => {
         </Link>
       </div>
 
-      <div className='max-w-lg w-full flex items-center border border-neutral-500 rounded-full overflow-hidden px-3 py-1'>
-        <input
-          type='text'
-          placeholder='Search'
-          className='outline-none w-full'
-        />
-        <Button>
-          <Icon icon={IoMdSearch} {...iconProps} />
-        </Button>
-      </div>
+      <SearchInput />
 
       <div className='flex items-center gap-x-3'>
         <Button>
