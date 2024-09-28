@@ -6,7 +6,7 @@ const Card = ({ item }) => {
   const { snippet, statistics, id } = item;
 
   return (
-    <div className='w-80'>
+    <div>
       <Link to={`/video/${id}`}>
         <img
           className='h-44 w-full overflow-hidden object-cover rounded-xl mb-2'
