@@ -15,7 +15,7 @@ const SearchResults = () => {
       <ScrollToTop element={scrollRef} />
       <div
         ref={scrollRef}
-        className='flex flex-col gap-y-5 items-center max-w-7xl mx-auto my-7'
+        className='flex flex-col gap-y-5 items-center max-w-7xl mx-auto my-7 px-3'
       >
         {items?.map(({ id, snippet }) => (
           <SearchResultCard

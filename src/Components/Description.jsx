@@ -10,7 +10,7 @@ const Description = ({ item }) => {
   const [isVisible, toggleVisibility] = useToggle();
 
   const getClass = () =>
-    `text-wrap font-sans ${isVisible ? 'line-clamp-3' : 'line-clamp-none'}`;
+    `text-wrap font-sans ${isVisible ? 'line-clamp-none' : 'line-clamp-3'}`;
 
   return (
     <div className='mt-6 bg-stone-100 rounded-xl p-4 relative'>

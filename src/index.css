@@ -4,5 +4,5 @@
 
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 350px));
 }

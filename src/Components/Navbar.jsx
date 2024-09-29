@@ -14,14 +14,14 @@ import SearchInput from './SearchInput';
 
 const Navbar = ({ toggleSide }) => {
   const iconProps = {
-    size: 28,
+    size: 24,
     color: '#52525b',
   };
 
   return (
-    <div className='flex-grow-0 flex justify-between items-center px-4 py-3 shadow bg-white sticky top-0 z-10'>
+    <div className='flex-grow-0 flex justify-between items-center px-2 sm:px-4 py-3 shadow bg-white sticky top-0 z-10'>
       <div className='flex items-center gap-x-4'>
-        <Button onClick={toggleSide}>
+        <Button className='hidden sm:block' onClick={toggleSide}>
           <Icon {...iconProps} icon={IoMdMenu} />
         </Button>
         <Link to='/'>
@@ -31,7 +31,7 @@ const Navbar = ({ toggleSide }) => {
 
       <SearchInput />
 
-      <div className='flex items-center gap-x-3'>
+      <div className='flex items-center gap-x-1 sm:gap-x-3'>
         <Button>
           <Icon icon={IoMdNotifications} {...iconProps} />
         </Button>
@@ -40,9 +40,6 @@ const Navbar = ({ toggleSide }) => {
         </Button>
         <Button>
           <Icon icon={IoMdSettings} {...iconProps} />
-        </Button>
-        <Button>
-          <img className='h-10 rounded-full' src={person} alt='Your Photo' />
         </Button>
       </div>
     </div>

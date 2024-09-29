@@ -12,7 +12,7 @@ const Feed = ({ category }) => {
     <>
       <div
         ref={scrollRef}
-        className={`videos-grid p-6 w-full gap-x-4 gap-y-6 justify-center bg-neutral-100`}
+        className={`videos-grid p-3 md:p-6 w-full gap-x-4 gap-y-6 justify-center bg-neutral-100`}
       >
         {items?.map((i) => (
           <Card key={i.id} item={i} />

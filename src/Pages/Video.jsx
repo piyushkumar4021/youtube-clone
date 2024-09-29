@@ -14,8 +14,11 @@ const Video = () => {
 
   return (
     <>
-      <div ref={scrollRef} className='pt-6 pb-8 px-24 mx-auto flex gap-x-6'>
-        <div className='max-w-7xl'>
+      <div
+        ref={scrollRef}
+        className='container py-6 px-3 mx-auto grid grid-cols-1 xl:grid-cols-4 gap-y-5 gap-x-6'
+      >
+        <div className='col-span-1 xl:col-span-3'>
           <YoutubeVideo vId={vId} />
           <VideoDetails item={item} />
         </div>

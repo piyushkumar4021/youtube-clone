@@ -2,7 +2,7 @@ import converter from '../Services/converter';
 
 const ChannelDetails = ({ item, data }) => {
   return (
-    <>
+    <div className='flex gap-3'>
       <img
         className='inline-block w-10 h-10 bg-neutral-500 rounded-full'
         src={data?.snippet?.thumbnails?.default?.url}
@@ -16,7 +16,7 @@ const ChannelDetails = ({ item, data }) => {
           {converter(data?.statistics?.subscriberCount)} Subscribers
         </span>
       </div>
-    </>
+    </div>
   );
 };
 

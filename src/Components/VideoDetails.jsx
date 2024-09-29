@@ -11,14 +11,14 @@ const VideoDetails = ({ item }) => {
     <div>
       <h2 className='text-xl font-semibold mt-3'>{item?.snippet?.title}</h2>
 
-      <div className='flex justify-between items-center mt-3'>
-        <div className='flex items-center gap-x-2'>
+      <div className='flex justify-between gap-y-4 flex-col lg:flex-row mt-3'>
+        <div className='flex items-center gap-x-2 justify-between'>
           <ChannelDetails data={data} item={item} />
 
           <SubscribeButton />
         </div>
 
-        <div className='flex gap-x-2 font-semibold'>
+        <div className='flex gap-x-2 font-semibold text-sm sm:text-base'>
           <SocialButtons likeCount={item?.statistics?.likeCount} />
         </div>
       </div>
